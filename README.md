@@ -12,7 +12,7 @@ El trabajo consiste en pasar de un análisis “a ojo” a algo que se pueda dis
 
 Herramientas que he usado: [Website Carbon Calculator](https://www.websitecarbon.com/), Lighthouse dentro de Chrome, [WAVE](https://wave.webaim.org/) y la pestaña **Red** de las herramientas de desarrollador. Las pruebas las hice en **incógnito** y recargando en frío para que no me inflaran los datos una sesión vieja con todo cacheado.
 
-Las capturas están en la carpeta `evidencias/` y van enlazadas abajo. Los archivos tienen que llamarse `01-website-carbon.png` … `06-cookies-banner.png` (si los tienes en jpg, renómbralos o pásalos a png para que GitHub no rompa el enlace).
+Las capturas están en la carpeta `evidencias/` y van enlazadas abajo.
 
 ---
 
@@ -30,7 +30,7 @@ El calculador de carbono me ha dado **0,91 g CO₂e por visita**, nota **F**, y 
 
 Captura 1 — Website Carbon.
 
-![Captura 1: resultado en Website Carbon Calculator](evidencias/01-website-carbon.png)
+![Captura 1: resultado en Website Carbon Calculator](evidencias/website-carbon.png)
 
 Lighthouse me ha dejado un cuadro bastante claro: **Performance 78**, **Accessibility 79**, **Best Practices 54**, **SEO 85**. Lo que más me ha chirriado no es solo el 78 de rendimiento, sino el **54** de buenas prácticas: ahí suelen colarse cosas de seguridad, APIs viejas, third-parties chapuceros, etc., y conviene abrir el desplegable y leer el detalle en clase.
 
@@ -38,7 +38,7 @@ Además Lighthouse avisó de que la página **iba tan lenta que no terminó dent
 
 Captura 2 — Lighthouse (resumen).
 
-![Captura 2: Lighthouse, categorías y métricas](evidencias/02-lighthouse-performance.png)
+![Captura 2: Lighthouse, categorías y métricas](evidencias/lighthouse-performance.png)
 
 ### 2.2. Red: qué es lo más gordo
 
@@ -46,7 +46,7 @@ En la pestaña Red, ordenando por tamaño tras un **Ctrl+Mayús+R**, lo que más
 
 Captura 3 — Network.
 
-![Captura 3: DevTools, pestaña Red, recursos más pesados](evidencias/03-network-top3.png)
+![Captura 3: DevTools, pestaña Red, recursos más pesados](evidencias/network-top3.png)
 
 ### 2.3. ¿Hay inflación de software?
 
@@ -60,11 +60,11 @@ WAVE me ha salido con **5 errores** y **18 alertas** (no es dramático, pero tam
 
 Captura 4 — WAVE.
 
-![Captura 4: informe WAVE](evidencias/04-wave.png)
+![Captura 4: informe WAVE](evidencias/wave.png)
 
 Captura 5 — Lighthouse, accesibilidad.
 
-![Captura 5: Lighthouse, pestaña Accessibility](evidencias/05-lighthouse-accessibility.png)
+![Captura 5: Lighthouse, pestaña Accessibility](evidencias/lighthouse-accessibility.png)
 
 Dos problemas que yo destacaría para la memoria:
 
@@ -80,7 +80,7 @@ En el banner (captura 6) se ve si el usuario puede **rechazar lo no esencial** s
 
 Captura 6 — Cookies.
 
-![Captura 6: banner de cookies](evidencias/06-cookies-banner.png)
+![Captura 6: banner de cookies](evidencias/cookies-banner.png)
 
 Sobre formularios de contacto B2B: pedir nombre, mail, teléfono, país, sector y mensaje es habitual. Lo razonable es que no pidan de más y que lo opcional se note; el teléfono como obligatorio solo si de verdad lo necesitan para cerrar leads.
 
@@ -88,7 +88,7 @@ Sobre formularios de contacto B2B: pedir nombre, mail, teléfono, país, sector 
 
 ## 5. Qué haría yo en una refactorización
 
-**Imágenes:** pasar a **WebP/AVIF** con `picture`, `srcset` y `sizes`, y `loading="lazy"` en lo que no sea el primer pantallazo. El LCP que elijas puede llevar `fetchpriority="high"`, el resto no.
+**Imágenes:** pasar a **WebP/AVIF** con `picture`, `srcset` y `sizes`, y `loading="lazy"`
 
 **Vídeo:** sin autoplay con sonido, `preload="none"` y un poster estático.
 
@@ -107,7 +107,7 @@ Sobre formularios de contacto B2B: pedir nombre, mail, teléfono, país, sector 
 
 **Objetivos realistas** para una segunda iteración: bajar peso de home de ~4,8 MB hacia ~3,2 MB, recortar peticiones de ~118 a ~85, subir Performance de **78** hacia **88**, accesibilidad de **79** hacia **95**, buenas prácticas de **54** hacia **90**, y bajar el Speed Index de **12,5 s** hacia algo razonable en móvil (yo pondría como norte **4,5 s**, sabiendo que depende del throttling).
 
-### Paradoja de Jevons
+### Paradoja de Jevons (en castellano llano)
 
 Si la página pesa la mitad pero la gente la usa el doble de veces porque ahora va fina, el ahorro por visita se come en parte con el volumen. Por eso en un proyecto serio no basta con Lighthouse: hace falta **techo de peso** en el repo, revisar terceros cada trimestre y mirar **visitas × gramos** aunque sea de forma aproximada.
 
@@ -124,4 +124,5 @@ En resumen: la web cumple como escaparate, pero los números dicen que **paga un
 - [Website Carbon Calculator](https://www.websitecarbon.com/)  
 - [AEPD — cookies](https://www.aepd.es/)  
 - [MDN — lazy loading](https://developer.mozilla.org/es/docs/Web/Performance/Lazy_loading)
+
 
