@@ -107,7 +107,7 @@ Sobre formularios de contacto B2B: pedir nombre, mail, teléfono, país, sector 
 
 **Objetivos realistas** para una segunda iteración: bajar peso de home de ~4,8 MB hacia ~3,2 MB, recortar peticiones de ~118 a ~85, subir Performance de **78** hacia **88**, accesibilidad de **79** hacia **95**, buenas prácticas de **54** hacia **90**, y bajar el Speed Index de **12,5 s** hacia algo razonable en móvil (yo pondría como norte **4,5 s**, sabiendo que depende del throttling).
 
-### Paradoja de Jevons (en castellano llano)
+### Paradoja de Jevons
 
 Si la página pesa la mitad pero la gente la usa el doble de veces porque ahora va fina, el ahorro por visita se come en parte con el volumen. Por eso en un proyecto serio no basta con Lighthouse: hace falta **techo de peso** en el repo, revisar terceros cada trimestre y mirar **visitas × gramos** aunque sea de forma aproximada.
 
@@ -125,4 +125,3 @@ En resumen: la web cumple como escaparate, pero los números dicen que **paga un
 - [AEPD — cookies](https://www.aepd.es/)  
 - [MDN — lazy loading](https://developer.mozilla.org/es/docs/Web/Performance/Lazy_loading)
 
-**Entrega:** este `README.md` va en la raíz del repositorio de GitHub junto con la carpeta `evidencias/`. Después de `git push`, abre el repo en el navegador y comprueba que las imágenes cargan; si no, casi seguro es el nombre del archivo o la extensión.
