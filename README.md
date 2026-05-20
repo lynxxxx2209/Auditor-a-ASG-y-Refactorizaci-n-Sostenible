@@ -8,11 +8,11 @@ Empresa elegida: **Cosentino S.A.**
 Web auditada: **https://www.cosentino.com/es**  
 Dirección de referencia: Carretera del Moral 51, 03600 Cantoria (Almería).
 
-El trabajo consiste en pasar de un análisis “a ojo” a algo que se pueda discutir en clase con números: cuánto pesa la home, qué pinta tiene eso en CO₂ aproximado, si el sitio es usable para todo el mundo y si el tema cookies y formularios está razonablemente cuidado. Después propongo cambios concretos de front, sin montar un discurso vacío.
+El trabajo consiste en pasar de un análisis “a ojo” a algo que se pueda discutir en clase con números: cuánto pesa la home, qué pinta tiene eso en CO₂ aproximado, si el sitio es usable para todo el mundo y si el tema cookies y formularios está razonablemente cuidado. Después he propuesto cambios concretos de front.
 
 Herramientas que he usado: [Website Carbon Calculator](https://www.websitecarbon.com/), Lighthouse dentro de Chrome, [WAVE](https://wave.webaim.org/) y la pestaña **Red** de las herramientas de desarrollador. Las pruebas las hice en **incógnito** y recargando en frío para que no me inflaran los datos una sesión vieja con todo cacheado.
 
-Las capturas están en la carpeta `evidencias/` y van enlazadas abajo.
+Las capturas están en la carpeta `evidencias/` y las he enlazado abajo.
 
 ---
 
@@ -30,41 +30,41 @@ El calculador de carbono me ha dado **0,91 g CO₂e por visita**, nota **F**, y 
 
 Captura 1 — Website Carbon.
 
-![Captura 1: resultado en Website Carbon Calculator](evidencias/website-carbon.png)
+![Captura 1: resultado en Website Carbon Calculator](/evidencias/website-carbon.png)
 
-Lighthouse me ha dejado un cuadro bastante claro: **Performance 78**, **Accessibility 79**, **Best Practices 54**, **SEO 85**. Lo que más me ha chirriado no es solo el 78 de rendimiento, sino el **54** de buenas prácticas: ahí suelen colarse cosas de seguridad, APIs viejas, third-parties chapuceros, etc., y conviene abrir el desplegable y leer el detalle en clase.
+Lighthouse me ha dejado un cuadro bastante claro: **Performance 78**, **Accessibility 79**, **Best Practices 54**, **SEO 85**. Lo que más me ha extrañado no es solo el 78 de rendimiento, sino el **54** de buenas prácticas: ahí suelen colarse cosas de seguridad, APIs viejas, etc..
 
-Además Lighthouse avisó de que la página **iba tan lenta que no terminó dentro del tiempo** del análisis, así que el informe puede quedarse corto. Aun así salieron métricas: **FCP 0,8 s**, **LCP 2,3 s**, **TBT 60 ms**, **CLS 0,001** (eso último está muy bien, la página no “salta”), pero el **Speed Index va a 12,5 s**, que es mucho: significa que tarda un mundo en pintarse del todo aunque el primer texto salga pronto.
+Además Lighthouse avisó de que la página **iba tan lenta que no terminó dentro del tiempo** del análisis, así que el informe puede quedarse corto. Aun así salieron métricas: **FCP 0,8 s**, **LCP 2,3 s**, **TBT 60 ms**, **CLS 0,001** , pero el **Speed Index va a 12,5 s**, que es mucho: significa que tarda un mundo en pintarse del todo aunque el primer texto salga pronto.
 
 Captura 2 — Lighthouse (resumen).
 
-![Captura 2: Lighthouse, categorías y métricas](evidencias/lighthouse-performance.png)
+![Captura 2: Lighthouse, categorías y métricas](/evidencias/lighthouse-performance.png)
 
 ### 2.2. Red: qué es lo más gordo
 
-En la pestaña Red, ordenando por tamaño tras un **Ctrl+Mayús+R**, lo que más suele pesar es un bloque grande de **imágenes del hero o carrusel**, detrás el bloque de **Google Tag Manager** con lo que cuelga, y luego **fuentes woff2** repetidas o pesadas. No hace falta ser adivino: en una web de interiores el ojo compra, pero el navegador paga el pato en megas y en batería.
+En la pestaña Red, ordenando por tamaño tras un **Ctrl+Mayús+R**, lo que más suele pesar es un bloque grande de **imágenes del hero o carrusel**, detrás el bloque de **Google Tag Manager** con lo que cuelga, y luego **fuentes woff2** repetidas o pesadas. No hace falta ser adivino: en una web de interiores el ojo compra, pero el navegador lo paga en megas y en batería.
 
 Captura 3 — Network.
 
-![Captura 3: DevTools, pestaña Red, recursos más pesados](evidencias/network-top3.png)
+![Captura 3: DevTools, pestaña Red, recursos más pesados](/evidencias/network-top3.png)
 
 ### 2.3. ¿Hay inflación de software?
 
-Hay partes que son inevitables (quieres ver el material), pero también hay **margen de recorte** sin perjudicar la imagen de marca: servir fotos más pequeñas de lo que se ve en pantalla, no arrancar todo el marketing tag al milisegundo cero, y no arrastrar fuentes enteras si con dos pesos basta. Eso es lo que en Green Software llaman inflación cuando **podrías contar la misma historia con menos bytes y menos CPU**.
+Hay partes que son inevitables , pero también hay **margen de recorte** sin perjudicar la imagen de marca: servir fotos más pequeñas de lo que se ve en pantalla, no arrancar todo el marketing tag al milisegundo cero, y no arrastrar fuentes enteras si con dos pesos basta. Eso es lo que en Green Software llaman inflación cuando **podrías contar la misma historia con menos bytes y menos CPU**.
 
 ---
 
 ## 3. Fase S — Accesibilidad
 
-WAVE me ha salido con **5 errores** y **18 alertas** (no es dramático, pero tampoco es un 10 sobresaliente). Lighthouse en accesibilidad marca **79**, coherente con que la web sea “bonita” pero con fallos típicos de contraste y componentes complejos.
+WAVE me ha salido con **5 errores** y **18 alertas** (no es malo, pero tampoco es un 10). Lighthouse en accesibilidad marca **79**, coherente con que la web sea “bonita” pero con fallos típicos de contraste y componentes complejos.
 
 Captura 4 — WAVE.
 
-![Captura 4: informe WAVE](evidencias/wave.png)
+![Captura 4: informe WAVE](/evidencias/wave.png)
 
 Captura 5 — Lighthouse, accesibilidad.
 
-![Captura 5: Lighthouse, pestaña Accessibility](evidencias/lighthouse-accessibility.png)
+![Captura 5: Lighthouse, pestaña Accessibility](/evidencias/lighthouse-accessibility.png)
 
 Dos problemas que yo destacaría para la memoria:
 
@@ -80,7 +80,7 @@ En el banner (captura 6) se ve si el usuario puede **rechazar lo no esencial** s
 
 Captura 6 — Cookies.
 
-![Captura 6: banner de cookies](evidencias/cookies-banner.png)
+![Captura 6: banner de cookies](/evidencias/cookies-banner.png)
 
 Sobre formularios de contacto B2B: pedir nombre, mail, teléfono, país, sector y mensaje es habitual. Lo razonable es que no pidan de más y que lo opcional se note; el teléfono como obligatorio solo si de verdad lo necesitan para cerrar leads.
 
